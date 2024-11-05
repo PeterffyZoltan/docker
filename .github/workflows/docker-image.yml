@@ -19,6 +19,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/joke-client:0.1
-        echo ${{secrets.GHCR_TOKEN}} | docker login ghcr.io -u bognarpal --password-stdin 
+        docker build . --file Dockerfile --tag ghcr.io/peterffyzoltan/joke-client:0.1
+        echo ${{secrets.GHCR_TOKEN}} | docker login ghcr.io -u peterffyzoltan --password-stdin 
         docker push ghcr.io/peterffyzoltan/joke-client:0.1
