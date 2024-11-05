@@ -6,8 +6,12 @@ on:
     
   push:
     branches: [ "master" ]
+    paths:
+      -'html/**'
   pull_request:
     branches: [ "master" ]
+    paths:
+      -'html/**'
 
 jobs:
 
