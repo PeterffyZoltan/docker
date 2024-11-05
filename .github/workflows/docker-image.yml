@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Html - Docker Image CI
 
 
 on:
@@ -19,6 +19,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/peterffyzoltan/joke-client:0.1
+        cd html
+        docker build . --file Dockerfile --tag ghcr.io/peterffyzoltan/joke-client:0.3
         echo ${{secrets.GHCR_TOKEN}} | docker login ghcr.io -u peterffyzoltan --password-stdin 
-        docker push ghcr.io/peterffyzoltan/joke-client:0.1
+        docker push ghcr.io/peterffyzoltan/joke-client:0.3
